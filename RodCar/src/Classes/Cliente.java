@@ -6,7 +6,6 @@ public class Cliente {
 	private String endereco;
 	private String cidade;
 	private String uf;
-	private int id;
 	private String telefone;
 	private Carro carro;
 	public Cliente(){
@@ -16,7 +15,7 @@ public class Cliente {
 	}
 	
 	public Cliente(String nome, String endereco, String cidade, 
-			String uf, int id, String telefone,Carro carro ){
+			String uf, String telefone,Carro carro ){
 	
 		this.nome = nome;
 		this.endereco = endereco;
@@ -59,14 +58,6 @@ public class Cliente {
 		this.uf = uf;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getTelefone() {
 		return telefone;
 	}
@@ -77,8 +68,7 @@ public class Cliente {
 	
 	@Override
 	public String toString() {
-		return "Nome: " + this.nome + " " +
-				"ID: " + this.id + "\n" +
+		return "Nome: " + this.nome + "\n" +
 				"Endereço: " + this.endereco + "\n" +
 				"Cidade: " + this.cidade + " " +
 				"UF: " + this.uf + "\n" +
