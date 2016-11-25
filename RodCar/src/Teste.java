@@ -10,7 +10,7 @@ public class Teste {
 		
 		
 		
-		Cliente c1 = new Cliente("Pedro", "Av das Nações 162", "Santo Andre", "SP", 
+		Cliente c1 = new Cliente("teste luiz", "Av das Nações 162", "Santo Andre", "SP", 
 					"114472-5967",new Carro("Corsa","ABC-1234"));
 		
 		System.out.println(c1.toString());
@@ -19,6 +19,9 @@ public class Teste {
 		sql.openDB();
 		sql.inserirCliente(c1.getNome(), c1.getEndereco(), c1.getCidade(), c1.getUf(),
 				c1.getTelefone());
+	
+		sql.inserirCarro(c1.getCarro().getModelo(), c1.getCarro().getPlaca(),
+				sql.buscarCliente(c1.getNome()));
 		
 		sql.closeDB();
 	}

@@ -74,11 +74,40 @@ public class Mysql {
 			ps.setString(2, modelo);
 			ps.setString(3, placa);
 			ps.setInt(4, idCliente);
+			ps.executeUpdate();
+			
+			ps.close();
+			System.out.println("Comando Executado");
 			
 		} catch (SQLException e) {
 			// TODO: handle exception
 		}
 		
+	}
+	
+	public int buscarCliente(String nome){
+		
+		String query;
+		int numero = 0;
+		try {
+			
+			query = " SELECT cli_id FROM clientes WHERE cli_nome =" + "\"" + nome + "\"";
+			rs = stmt.executeQuery(query);
+			
+			
+			while(rs.next()){
+				System.out.println(rs.getInt("cli_id"));
+				numero = rs.getInt("cli_id");
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		
+		return numero;
+	
 	}
 	
 	

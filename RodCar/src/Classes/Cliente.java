@@ -76,6 +76,14 @@ public class Cliente {
 				"Carro: " + this.carro.getModelo() + " " +
 				"Placa: " + this.carro.getPlaca() + "\n" ;
 	}
+
+	public Carro getCarro() {
+		return carro;
+	}
+
+	public void setCarro(Carro carro) {
+		this.carro = carro;
+	}
 	
 	
 }
